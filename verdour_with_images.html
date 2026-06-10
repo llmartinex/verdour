@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERDOUR - Premium Golf Experiences in Spain</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0;
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+        }
+
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #d4af37;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            margin-left: 40px;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .nav-cta {
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #1a1a1a;
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://i.pinimg.com/736x/f1/00/e0/f100e08b42b89f297183080d5891443f.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 14px 32px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* Brands Section */
+        .brands {
+            padding: 80px 60px;
+            background: #fafaf8;
+            text-align: center;
+        }
+
+        .brands p {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .brands-grid {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .brand-logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        /* Featured Section */
+        .featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 120px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #e8e3d8 0%, #d4c9b8 100%);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .featured-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .featured-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .featured-label {
+            font-size: 11px;
+            color: #d4af37;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .featured-btn {
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 12px 28px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .featured-btn:hover {
+            background: #1a1a1a;
+            color: #d4af37;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 120px 60px;
+            background: #f5f5f3;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 500px;
+            background: #e8e3d8;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            border-radius: 2px;
+        }
+
+        .testimonial-text {
+            max-width: 600px;
+        }
+
+        .quote {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+
+        .quote-author {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Products Grid */
+        .products {
+            padding: 120px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .product-card {
+            background: #f9f9f7;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .product-card:hover {
+            background: #f0f0f0;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: #e8e3d8;
+            margin-bottom: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .product-rating {
+            font-size: 12px;
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* Testimonials Grid */
+        .testimonials {
+            padding: 120px 60px;
+            background: #fafaf8;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 2px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* Features */
+        .features-footer {
+            padding: 80px 60px;
+            background: #e8dcc8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 80px 60px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .footer-section h4 {
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: #999;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 40px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .featured, .testimonial {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .featured-content h2, .section-title h2 {
+                font-size: 32px;
+            }
+
+            nav .container {
+                padding: 0 30px;
+            }
+
+            section {
+                padding: 80px 30px;
+            }
+
+            .products-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-logo">VERDOUR</div>
+            <div>
+                <a href="#experience">Experience</a>
+                <a href="#courses">Courses</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+            <button class="nav-cta">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://i.pinimg.com/736x/20/17/94/2017941047460b96b1e1113dafc8381d.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>Championship golf experiences for accomplished gentlemen</h1>
+            <p>Curated courses. Professional coaching. Spanish luxury.</p>
+            <button class="hero-btn">Request Consultation</button>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <p>Trusted by premium golf communities</p>
+        <div class="brands-grid">
+            <div class="brand-logo">IAGTO</div>
+            <div class="brand-logo">PGA Europe</div>
+            <div class="brand-logo">Golf Spain</div>
+            <div class="brand-logo">Premium Travel</div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <!-- GOLF COURSE IMAGE -->
+    <section class="featured">
+        <div class="featured-image" style="background-image: url('https://i.pinimg.com/736x/86/fc/52/86fc525d18d0a9abb384eb33430a9628.jpg');"></div>
+        <div class="featured-content">
+            <span class="featured-label">Championship Courses</span>
+            <h2>Unmatched course selection across Spain</h2>
+            <p>Access to 23 of Spain's most prestigious championship courses. Reserved tee times, personal caddy matching, and exclusive member benefits.</p>
+            <button class="featured-btn">Explore Courses</button>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <!-- MADRID LANDSCAPE IMAGE -->
+    <section class="testimonial">
+        <div class="testimonial-image" style="background-image: url('https://i.pinimg.com/1200x/64/d9/a1/64d9a1cefeb014ea2ad5d152c6a9b03e.jpg');"></div>
+        <div class="testimonial-text">
+            <p class="quote">"We're challenging the status quo — making championship golf experiences accessible to accomplished gentlemen who deserve world-class facilities and professional coaching."</p>
+            <p class="quote-author">VERDOUR Founding Philosophy</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="courses">
+        <div class="section-title">
+            <h2>Our Experience Packages</h2>
+            <p>Everything included in your championship golf journey</p>
+        </div>
+        <div class="products-grid">
+            <!-- PRODUCTO 1: CHAMPIONSHIP PLAY - GOLF -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://i.pinimg.com/1200x/6d/67/18/6d671824367fe1cfc887b122c8a04d88.jpg');"></div>
+                <h3>Championship Play</h3>
+                <p>18-hole reserved tee times</p>
+                <div class="product-rating">★★★★★</div>
+                <div class="product-price">Included</div>
+            </div>
+
+            <!-- PRODUCTO 2: PGA COACHING - FOOD -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://i.pinimg.com/736x/ea/f7/ae/eaf7ae1f196180b96de0821b32b769f0.jpg');"></div>
+                <h3>PGA Coaching</h3>
+                <p>Personal swing analysis</p>
+                <div class="product-rating">★★★★★</div>
+                <div class="product-price">Included</div>
+            </div>
+
+            <!-- PRODUCTO 3: MICHELIN DINING - GOLF BALL -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://i.pinimg.com/736x/db/a0/1c/dba01c04a1f5f9211471925d26e07f08.jpg');"></div>
+                <h3>Michelin Dining</h3>
+                <p>5-course experiences</p>
+                <div class="product-rating">★★★★★</div>
+                <div class="product-price">From €150</div>
+            </div>
+
+            <!-- PRODUCTO 4: 5-STAR HOTELS - LUXURY -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://i.pinimg.com/736x/1b/c6/ab/1bc6abd1e63462978f6e2cc8016eb823.jpg');"></div>
+                <h3>5-Star Hotels</h3>
+                <p>Heritage estates</p>
+                <div class="product-rating">★★★★★</div>
+                <div class="product-price">From €200</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>What our members say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="product-rating">★★★★★</div>
+                <p>"Verdour transformed my retirement golf experience. The coaching is world-class and the courses are absolutely stunning."</p>
+                <p class="testimonial-author">James Mitchell</p>
+                <p class="testimonial-role">Retired Executive</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="product-rating">★★★★★</div>
+                <p>"The attention to detail is remarkable. Every aspect of the experience has been perfectly curated for serious golfers."</p>
+                <p class="testimonial-author">Robert Thompson</p>
+                <p class="testimonial-role">Golf Enthusiast</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="product-rating">★★★★★</div>
+                <p>"Best decision I made. The community, the courses, the coaching — everything is exceptional."</p>
+                <p class="testimonial-author">David Foster</p>
+                <p class="testimonial-role">Professional Golfer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Footer -->
+    <section class="features-footer">
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>✈️ Airport Transfer</h3>
+                <p>Seamless arrival with private car service</p>
+            </div>
+            <div class="feature-item">
+                <h3>🚌 Hotel Shuttle</h3>
+                <p>Complimentary course transfers</p>
+            </div>
+            <div class="feature-item">
+                <h3>🏆 Warranty</h3>
+                <p>100% satisfaction guarantee</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔒 Secure Payments</h3>
+                <p>Encrypted transactions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <a href="#">Courses</a>
+                <a href="#">Coaching</a>
+                <a href="#">Accommodation</a>
+                <a href="#">Dining</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Careers</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookies</a>
+                <a href="#">Shipping</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 VERDOUR Golf Collective. All rights reserved. | Member of IAGTO | Andalusia • Barcelona • Costa del Sol</p>
+        </div>
+    </footer>
+</body>
+</html>
